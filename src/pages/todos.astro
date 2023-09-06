@@ -1,0 +1,24 @@
+---
+import type { Todo } from "../types";
+
+const todos: Todo[] = [
+  { content: "1", done: false, lastChange: Date.now() },
+  { content: "2", done: false, lastChange: Date.now() },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <h1>Todos</h1>
+    <ul>
+      {todos.map((todo: Todo) => <li>{todo.content}</li>)}
+    </ul>
+  </body>
+</html>
