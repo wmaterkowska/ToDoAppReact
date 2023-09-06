@@ -1,5 +1,6 @@
 ---
 import type { Todo } from "../types";
+import TodoCard from "../components/TodoCard/TodoCard";
 
 const todos: Todo[] = [
   { content: "1", done: false, lastChange: Date.now() },
@@ -10,15 +11,20 @@ const todos: Todo[] = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>ToDoList</title>
   </head>
   <body>
     <h1>Todos</h1>
     <ul>
-      {todos.map((todo: Todo) => <li>{todo.content}</li>)}
+      {
+        todos.map((todo: Todo) => (
+          <li>
+            <TodoCard todo={todo} />
+          </li>
+        ))
+      }
     </ul>
   </body>
 </html>

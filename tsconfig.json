@@ -1,9 +1,3 @@
-// {
-//   "compilerOptions": {
-//     "jsx": "react"
-//   },
-//   "extends": "astro/tsconfigs/strict"
-// }
 {
   "compilerOptions": {
     "incremental": true,
@@ -24,13 +18,14 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "allowJs": false,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "jsxImportSource": "react"
   },
   "include": [
     "src"
