@@ -1,10 +1,11 @@
 ---
 import type { Todo } from "../types";
 import TodoCard from "../components/TodoCard/TodoCard";
+import "../styles/global.css";
 
 const todos: Todo[] = [
-  { content: "1", done: false, lastChange: Date.now() },
-  { content: "2", done: false, lastChange: Date.now() },
+  { title: "test", content: "1", done: false, lastChange: Date.now() },
+  { content: "2", done: true, lastChange: Date.now() },
 ];
 ---
 
@@ -16,15 +17,6 @@ const todos: Todo[] = [
     <title>ToDoList</title>
   </head>
   <body>
-    <h1>Todos</h1>
-    <ul>
-      {
-        todos.map((todo: Todo) => (
-          <li>
-            <TodoCard todo={todo} />
-          </li>
-        ))
-      }
-    </ul>
+    {todos.map((todo: Todo) => <TodoCard todo={todo} client:load />)}
   </body>
 </html>

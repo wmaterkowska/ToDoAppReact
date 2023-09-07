@@ -1,0 +1,34 @@
+.todo-container {
+  position: relative;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 2%;
+  padding: 2%;
+}
+
+.todo-container-edit {
+  height: 98vh;
+  scroll-behavior: smooth;
+}
+
+.todo-title {
+  font-size: medium;
+  font-weight: bold;
+}
+
+.todo-content {
+  color: rgb(65, 65, 65);
+}
+
+.todo-date {
+  font-size: smaller;
+  justify-self: end;
+}
+
+.todo {
+  background-color: red;
+}
+
+.todo-done {
+  background-color: grey;
+}
