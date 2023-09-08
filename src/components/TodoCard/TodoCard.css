@@ -22,12 +22,14 @@
   color: var(--primary-color);
 }
 
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
 .todo-date {
   font-size: smaller;
   text-align: end;
 }
-
-.todo {}
 
 .todo-done {
   text-decoration: line-through var(--secondary-color);

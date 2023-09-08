@@ -50,9 +50,9 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
         </nav>
 
         <div className={`${isChecked ? "todo-done" : "todo"}`}>
-          <p className="todo-title">{todo.title}</p>
-          <p className="todo-content">{todo.content}</p>
-          <p className="todo-date">{todoDate}</p>
+          <div contentEditable="true" suppressContentEditableWarning={true} className="todo-title">{todo.title}</div>
+          <div contentEditable="true" suppressContentEditableWarning={true} className="todo-content">{todo.content}</div>
+          <div className="todo-date">{todoDate}</div>
         </div>
 
       </div>
