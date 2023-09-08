@@ -1,6 +1,7 @@
 ---
 import type { Todo } from "../types";
 import TodoCard from "../components/TodoCard/TodoCard";
+import Header from "../components/Header/Header";
 import "../styles/global.css";
 
 const todos: Todo[] = [
@@ -17,6 +18,7 @@ const todos: Todo[] = [
     <title>ToDoList</title>
   </head>
   <body>
+    <Header client:load />
     {todos.map((todo: Todo) => <TodoCard todo={todo} client:load />)}
   </body>
 </html>

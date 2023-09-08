@@ -45,8 +45,8 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
         </label>
 
         <nav className="navigation">
-          {toEdit && <button className="back" onClick={handleBackArrow}><span class="material-symbols-outlined">arrow_back_ios</span></button>}
-          {toEdit && <button className="delete"><span class="material-symbols-outlined">delete</span></button>}
+          {toEdit && <button className="back" onClick={handleBackArrow}><span className="material-symbols-outlined">arrow_back_ios</span></button>}
+          {toEdit && <button className="delete"><span className="material-symbols-outlined">delete</span></button>}
         </nav>
 
         <div className={`${isChecked ? "todo-done" : "todo"}`}>

@@ -3,16 +3,23 @@
 :root {
   --primary-color: black;
   --secondary-color: rgb(65, 65, 65);
+  --background-color: transparent;
 }
 
+body.dark {
+  --primary-color: white;
+  --secondary-color: rgb(235, 233, 233);
+  --background-color: rgb(17, 17, 17);
+}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Roboto';
+  color: var(--primary-color);
 }
 
-ul {
-  list-style-type: none;
+body {
+  background-color: var(--background-color);
 }
