@@ -2,6 +2,7 @@
 import type { Todo } from "../types";
 import TodoCard from "../components/TodoCard/TodoCard";
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import "../styles/global.css";
 
 const todos: Todo[] = [
@@ -19,6 +20,9 @@ const todos: Todo[] = [
   </head>
   <body>
     <Header client:load />
-    {todos.map((todo: Todo) => <TodoCard todo={todo} client:load />)}
+    <div class="todoList">
+      {todos.map((todo: Todo) => <TodoCard todo={todo} client:load />)}
+    </div>
+    <Footer client:load />
   </body>
 </html>

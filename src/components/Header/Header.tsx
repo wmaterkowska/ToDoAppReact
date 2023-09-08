@@ -10,8 +10,10 @@ const Header: React.FC<{}> = () => {
         <div className="logo">TodoList</div>
         <div className="options-container">
           <ThemeSwitch />
+          <div>=</div>
         </div>
       </div>
+
       <hr></hr>
     </>
   )

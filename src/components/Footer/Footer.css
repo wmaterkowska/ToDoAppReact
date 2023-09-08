@@ -1,0 +1,21 @@
+.footer-container {
+  display: block;
+  border-top: 0.1em solid var(--primary-color);
+  min-height: 2.9em;
+}
+
+.btn-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.5em;
+  margin: auto auto auto auto;
+}
+
+.addBtn {
+  border: 0.1em solid var(--primary-color);
+  border-radius: 0.7em;
+  background-color: var(--background-color);
+  min-width: 3em;
+  min-height: 3em;
+}

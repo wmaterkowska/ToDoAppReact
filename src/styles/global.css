@@ -3,7 +3,7 @@
 :root {
   --primary-color: black;
   --secondary-color: rgb(65, 65, 65);
-  --background-color: transparent;
+  --background-color: white;
 }
 
 body.dark {
@@ -21,5 +21,14 @@ body.dark {
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.todoList {
+  flex-grow: 1;
 }
