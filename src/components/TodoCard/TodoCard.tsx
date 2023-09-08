@@ -18,12 +18,11 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
 
   const todoDate = dayjs(todo.lastChange).fromNow();
 
-
   function handleCheckboxChange(event: React.ChangeEvent<HTMLInputElement>) {
+    event.stopPropagation();
     const updatedTodo = { ...todo };
     updatedTodo.done = event.target.checked;
     setIsChecked(updatedTodo.done)
-    console.log("test");
   }
 
   function handleClickOnCard() {
@@ -32,7 +31,6 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
 
   function handleBackArrow(event: React.MouseEvent) {
     event.stopPropagation();
-    // event.preventDefault();
     setToEdit(false);
   }
 
@@ -44,7 +42,9 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
         <p className="todo-content">{todo.content}</p>
         <p className="todo-date">{todoDate}</p>
       </div>
-      <input type="checkbox" defaultChecked={isChecked} onChange={handleCheckboxChange} />
+      <label onClick={(event) => event.stopPropagation()}>
+        <input type="checkbox" defaultChecked={isChecked} onChange={handleCheckboxChange} />
+      </label>
       {toEdit && <button className="delete">delete</button>}
     </div>
   )
