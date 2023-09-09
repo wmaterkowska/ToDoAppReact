@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 2%;
 }
 
 .logo {
@@ -14,3 +13,19 @@
   display: flex;
   flex-direction: row;
 }
+
+.logo,
+.options-container,
+.menu {
+  padding: 2%;
+}
+
+
+/* .menu-container {
+  position: absolute;
+  height: 100vh;
+  margin-top: 2em;
+  min-width: 50vw;
+  background-color: var(--background-color);
+  z-index: 200;
+} */

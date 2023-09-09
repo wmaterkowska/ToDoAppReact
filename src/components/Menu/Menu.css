@@ -1,0 +1,27 @@
+.menu-container {
+  position: absolute;
+  height: 100vh;
+  min-width: 33vw;
+  margin-top: 5%;
+  right: 0;
+  background-color: var(--background-color);
+  z-index: 101;
+  /* border: 1px solid black; */
+}
+
+@media (max-width: 767px) {
+  .menu-container {
+    width: 100vw;
+    margin-top: 12%;
+  }
+}
+
+.menu-item {
+  padding: 2%;
+  font-weight: bold;
+}
+
+p {
+  margin: 1%;
+  font-size: smaller;
+}
