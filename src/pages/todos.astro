@@ -19,7 +19,7 @@ const todos: Todo[] = [
     <title>ToDoList</title>
   </head>
   <body>
-    <Header client:load />
+    <Header client:only />
     <div class="todoList">
       {todos.map((todo: Todo) => <TodoCard todo={todo} client:load />)}
     </div>
