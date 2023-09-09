@@ -20,12 +20,6 @@
   padding: 2%;
 }
 
-
-/* .menu-container {
-  position: absolute;
-  height: 100vh;
-  margin-top: 2em;
-  min-width: 50vw;
-  background-color: var(--background-color);
-  z-index: 200;
-} */
+.menu {
+  cursor: pointer;
+}

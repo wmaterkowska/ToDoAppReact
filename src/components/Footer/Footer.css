@@ -1,15 +1,21 @@
 .footer-container {
+  position: fixed;
   display: block;
   border-top: 0.1em solid var(--primary-color);
   min-height: 2.9em;
+  width: 100vw;
+  bottom: 0;
+  background-color: var(--background-color);
+  z-index: 200;
 }
 
 .btn-container {
-  position: absolute;
+  position: fixed;
   left: 50%;
   transform: translateX(-50%);
   bottom: 1.5em;
   margin: auto auto auto auto;
+  z-index: inherit;
 }
 
 .addBtn {

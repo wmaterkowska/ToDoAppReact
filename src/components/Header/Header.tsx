@@ -23,19 +23,11 @@ const Header: React.FC<{}> = () => {
 
       <div className="header-container">
         <div className="logo">TodoList</div>
-        {/* <div className="options-container"> */}
-        <ThemeSwitch />
-        <Menu hamburgerOpen={hamburgerOpen}></Menu>
-
-        {/* <div className="menu-container">
-          <div>logout</div>
-          <hr></hr>
-          <div>About</div>
-        </div> */}
-
-        <div onClick={toggleHamburger} className="menu"><span className="material-symbols-outlined">menu</span> </div>
-
-        {/* </div> */}
+        <div className="options-container">
+          <ThemeSwitch />
+          <Menu hamburgerOpen={hamburgerOpen} ></Menu>
+          <div onClick={toggleHamburger} className="menu"><span className="material-symbols-outlined">menu</span> </div>
+        </div>
       </div>
 
       <hr></hr>

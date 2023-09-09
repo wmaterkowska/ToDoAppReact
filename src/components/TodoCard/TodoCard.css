@@ -6,10 +6,21 @@
   border-radius: 0.7em;
   margin: 2%;
   padding: 2%;
+  background-color: var(--background-color);
 }
 
 .todo-container-edit {
+  position: absolute;
+  top: 10%;
   height: 92.5vh;
+  width: 96vw;
+  z-index: 999;
+}
+
+@media (max-width: 767px) {
+  .todo-container-edit {
+    top: 5%;
+  }
 }
 
 .todo-title {

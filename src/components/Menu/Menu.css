@@ -2,26 +2,29 @@
   position: absolute;
   height: 100vh;
   min-width: 33vw;
-  margin-top: 5%;
   right: 0;
+  top: 10%;
   background-color: var(--background-color);
-  z-index: 101;
-  /* border: 1px solid black; */
+  border-left: 1px solid var(--primary-color);
+  z-index: 900;
 }
 
 @media (max-width: 767px) {
   .menu-container {
     width: 100vw;
     margin-top: 12%;
+    border: none;
+    top: 0;
   }
 }
 
 .menu-item {
   padding: 2%;
+  margin-left: 2%;
   font-weight: bold;
 }
 
 p {
-  margin: 1%;
+  margin: 2%;
   font-size: smaller;
 }
