@@ -13,7 +13,7 @@ const signupUser = (user: SignUpUser) => {
     .catch((err) => console.log(err));
 };
 
-const loginUser = (user: LoginUser) => {
+const login = (user: LoginUser) => {
   return fetch(`http://localhost:3000/auth/login`, {
     method: "POST",
     // credentials: "include",
@@ -25,9 +25,10 @@ const loginUser = (user: LoginUser) => {
     .then((response) => {
       const expires = new Date();
       expires.setDate(expires.getDate() + 7);
-      document.cookie = `authCookie=${encodeURIComponent(JSON.stringify(response))}; expires=${expires.toUTCString()}`
+      document.cookie = `authCookie=${encodeURIComponent(JSON.stringify(response))}; expires=${expires.toUTCString()}`;
+      return true;
     })
     .catch((err) => console.log(err));
 };
 
-export { signupUser, loginUser };
+export { signupUser, login };

@@ -3,7 +3,7 @@ import DOMPurify from "dompurify";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from 'yup';
 import type { LoginUser } from "data/LoginUser";
-import { loginUser } from "services/userService";
+import { login } from "services/userService";
 import "./Login.css"
 
 const formSchema = Yup.object().shape({
@@ -37,10 +37,12 @@ const Login: React.FC<{}> = () => {
       email: clean(data.email),
       password: clean(data.password)
     };
-    const response = await loginUser(newUserData);
+    const response = await login(newUserData);
     reset();
 
-    window.location.href = '/todos';
+    if (response) {
+      window.location.href = '/todos';
+    }
   }
 
 

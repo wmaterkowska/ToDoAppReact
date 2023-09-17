@@ -33,11 +33,6 @@ body {
   align-items: center;
 }
 
-.todoList {
-  flex-grow: 1;
-  margin-bottom: 2.9em;
-}
-
 button {
   cursor: pointer;
 }

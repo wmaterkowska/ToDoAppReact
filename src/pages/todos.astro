@@ -1,14 +1,8 @@
 ---
-import type { Todo } from "../types";
-import TodoCard from "../components/TodoCard/TodoCard";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import TodosList from "../components/TodosList/TodosList";
 import "../styles/global.css";
-
-const todos: Todo[] = [
-  { title: "test", content: "1", done: false, lastChange: Date.now() },
-  { content: "2", done: true, lastChange: Date.now() },
-];
 ---
 
 <html lang="en">
@@ -20,9 +14,8 @@ const todos: Todo[] = [
   </head>
   <body>
     <Header client:only />
-    <div class="todoList">
-      {todos.map((todo: Todo) => <TodoCard todo={todo} client:load />)}
-    </div>
+    <TodosList client:only />
+
     <Footer client:load />
   </body>
 </html>

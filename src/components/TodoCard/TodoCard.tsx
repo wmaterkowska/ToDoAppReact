@@ -1,13 +1,13 @@
 import "./TodoCard.css"
-import type { Todo } from "types";
 import { useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from 'dayjs/plugin/relativeTime';
+import type { TodoFromBackend } from "data/TodoFromBackend";
 
 
 dayjs.extend(relativeTime);
 interface TodoCardProps {
-  todo: Todo;
+  todo: TodoFromBackend;
 }
 
 const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
