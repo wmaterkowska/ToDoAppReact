@@ -1,6 +1,9 @@
 ---
 import "../styles/global.css";
 import "../styles/login.css";
+
+import Login from "../components/Login/Login";
+import ThemeSwitch from "components/ThemeSwitch/ThemeSwitch";
 ---
 
 <html lang="en">
@@ -12,19 +15,15 @@ import "../styles/login.css";
 	</head>
 	<body>
 		<h1>ToDo List</h1>
-
-		<a href="/">back</a>
-
-		<h2>Login</h2>
-		<form>
-			<label for="e-mail">e-mail</label>
-			<input type="text" placeholder="e-mail" name="e-mail" required />
-
-			<label for="password">password</label>
-			<input type="password" placeholder="password" name="password" required />
-
-			<button type="submit">Login</button>
-		</form>
-		<p>You don't have an account? <a href="/signup">Create new</a></p>
+		<div class="nav-container">
+			<a href="/"
+				><span class="material-symbols-outlined">arrow_back_ios</span></a
+			>
+			<ThemeSwitch client:load />
+		</div>
+		<Login client:load />
+		<p class="not-account">
+			You don't have an account? <a href="/signup">Create new</a>
+		</p>
 	</body>
 </html>

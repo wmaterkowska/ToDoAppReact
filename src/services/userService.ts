@@ -1,17 +1,5 @@
+import type { LoginUser } from "data/LoginUser";
 import type { SignUpUser } from "data/SignUpUser";
-
-// export async function signupUser(signupObject: SignUpUser) {
-
-//   const options = {
-//     method: 'POST',
-//     // credentials: "include",
-//     // mode: "cors",
-//     body: JSON.stringify(signupObject)
-//   }
-//   const response = await fetch(`http://localhost:3000/auth/signup`, options);
-//   console.log(await response.json());
-//   return response;
-// }
 
 const signupUser = (user: SignUpUser) => {
   return fetch(`http://localhost:3000/auth/signup`, {
@@ -25,4 +13,21 @@ const signupUser = (user: SignUpUser) => {
     .catch((err) => console.log(err));
 };
 
-export { signupUser };
+const loginUser = (user: LoginUser) => {
+  return fetch(`http://localhost:3000/auth/login`, {
+    method: "POST",
+    // credentials: "include",
+    mode: "cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(user),
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      const expires = new Date();
+      expires.setDate(expires.getDate() + 7);
+      document.cookie = `authCookie=${encodeURIComponent(JSON.stringify(response))}; expires=${expires.toUTCString()}`
+    })
+    .catch((err) => console.log(err));
+};
+
+export { signupUser, loginUser };
