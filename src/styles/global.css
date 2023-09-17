@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root {
+  --primary-color: black;
+  --secondary-color: rgb(65, 65, 65);
+  --background-color: white;
+}
+
+body.dark {
+  --primary-color: white;
+  --secondary-color: rgb(235, 233, 233);
+  --background-color: rgb(17, 17, 17);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  color: var(--primary-color);
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.todoList {
+  flex-grow: 1;
+  margin-bottom: 2.9em;
+}
+
+button {
+  cursor: pointer;
+}

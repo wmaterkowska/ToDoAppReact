@@ -1,16 +1,24 @@
----
-
----
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>ToDoList</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>ToDo List</h1>
+
+		<h2>Login</h2>
+		<form>
+			<label for="e-mail">e-mail</label>
+			<input type="text" placeholder="e-mail" name="e-mail" required />
+
+			<label for="password">password</label>
+			<input type="password" placeholder="password" name="password" required />
+
+			<button type="submit">Login</button>
+		</form>
+		<p>You don't have an account? <a href="/signup">Create new</a></p>
 	</body>
 </html>

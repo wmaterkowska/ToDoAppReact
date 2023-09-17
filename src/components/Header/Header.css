@@ -1,0 +1,25 @@
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: larger;
+  font-weight: 800;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo,
+.options-container,
+.menu {
+  padding: 2%;
+}
+
+.menu {
+  cursor: pointer;
+}

@@ -1,0 +1,110 @@
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1%;
+  border: 0.1em solid var(--primary-color);
+  border-radius: 0.7em;
+  margin: 2%;
+  padding: 2%;
+  background-color: var(--background-color);
+}
+
+.todo-container-edit {
+  position: absolute;
+  top: 10%;
+  height: 92.5vh;
+  width: 96vw;
+  z-index: 999;
+}
+
+@media (max-width: 767px) {
+  .todo-container-edit {
+    top: 5%;
+  }
+}
+
+.todo-title {
+  font-size: large;
+  font-weight: bold;
+}
+
+.todo-content {
+  font-size: medium;
+  color: var(--primary-color);
+}
+
+[contenteditable] {
+  outline: 0px solid transparent;
+}
+
+.todo-date {
+  font-size: smaller;
+  text-align: end;
+}
+
+.todo-done {
+  text-decoration: line-through var(--secondary-color);
+}
+
+.navigation {
+  position: relative;
+  display: inline-block;
+}
+
+.delete {
+  border: none;
+  background-color: transparent;
+  float: right;
+}
+
+.back {
+  border: none;
+  background-color: transparent;
+}
+
+.checkbox-container {
+  position: relative;
+  top: 0;
+  z-index: 100;
+}
+
+.checkbox {
+  right: 0;
+  appearance: none;
+  font: inherit;
+  width: 1em;
+  height: 1em;
+  border: 0.1em solid var(--secondary-color);
+  border-radius: 0.15em;
+  display: grid;
+  place-content: center;
+}
+
+.checkbox::before {
+  content: '';
+  width: 0.5em;
+  height: 0.5em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--secondary-color);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox:checked::before {
+  transform: scale(1);
+}
+
+.checkbox-edit {
+  position: absolute;
+  top: 0.7em;
+  right: 2em;
+}
+
+.checkbox-noedit {
+  position: absolute;
+}
+
+span {
+  color: var(--secondary-color);
+}
