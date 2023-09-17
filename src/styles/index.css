@@ -1,0 +1,26 @@
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20vh 0;
+  width: fit-content;
+}
+
+.nav-item-container {
+  margin: 2%;
+  padding: 2%;
+  border: 0.1em solid var(--primary-color);
+  border-radius: 0.7em;
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+a {
+  font-size: large;
+  font-weight: bolder;
+  max-width: 400px;
+  min-width: 380px
+}
+
+p {
+  margin: 0 2%;
+}

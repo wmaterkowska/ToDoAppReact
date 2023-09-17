@@ -1,3 +1,8 @@
+---
+import "../styles/global.css";
+import "../styles/index.css";
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,7 +13,12 @@
   <body>
     <h1>ToDo List</h1>
 
-    <a href="/login">Login</a>
-    <a href="/signup">Register</a>
+    <div class="nav-container">
+      <p>If you have an account: login</p>
+      <a href="/login"><div class="nav-item-container">Login</div></a>
+
+      <p>If you don't have an account: register</p>
+      <a href="/signup"><div class="nav-item-container">Register</div></a>
+    </div>
   </body>
 </html>

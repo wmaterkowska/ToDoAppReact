@@ -28,6 +28,7 @@ body {
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .todoList {
@@ -37,4 +38,9 @@ body {
 
 button {
   cursor: pointer;
+}
+
+h1 {
+  margin: 10%;
+  text-align: center;
 }
