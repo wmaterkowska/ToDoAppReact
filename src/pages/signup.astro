@@ -3,6 +3,7 @@ import "../styles/global.css";
 import "../styles/signup.css";
 
 import SignUp from "../components/SignUp/SignUp";
+import ThemeSwitch from "components/ThemeSwitch/ThemeSwitch";
 ---
 
 <html lang="en">
@@ -10,13 +11,20 @@ import SignUp from "../components/SignUp/SignUp";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300"
+      rel="stylesheet"
+    />
     <title>ToDoList</title>
   </head>
   <body>
     <h1>ToDo List</h1>
-
-    <a href="/">back</a>
-
+    <div class="nav-container">
+      <a href="/"
+        ><span class="material-symbols-outlined">arrow_back_ios</span></a
+      >
+      <ThemeSwitch client:load />
+    </div>
     <SignUp client:load />
   </body>
 </html>

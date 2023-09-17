@@ -17,8 +17,8 @@
 a {
   font-size: large;
   font-weight: bolder;
+  width: 90vw;
   max-width: 400px;
-  min-width: 380px
 }
 
 p {

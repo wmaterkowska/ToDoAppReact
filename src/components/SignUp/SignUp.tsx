@@ -4,6 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from 'yup';
 import type { SignUpUser } from "data/SignUpUser";
 import { signupUser } from "services/userService";
+import "./SignUp.css"
 
 const formSchema = Yup.object().shape({
   password: Yup.string()
@@ -52,38 +53,38 @@ const SignUp: React.FC<{}> = () => {
 
 
   return (
-    <>
+    <div className="form-container">
       <h2>Register:</h2>
-      <form onSubmit={handleSubmit(registerUser)}>
-        <div>
-          <label htmlFor="username">username</label>
-          <input type="text" placeholder="username" id="username" required {...register("username", { required: true })} />
-          {errors.username && <p role="alert">{errors.username.message}</p>}
+      <form onSubmit={handleSubmit(registerUser)} className="form">
+        <div className="input-div">
+          <label htmlFor="username" className="label">username</label>
+          <input type="text" placeholder="username" id="username" {...register("username", { required: true })} className="input" />
         </div>
-        <div>
-          <label htmlFor="e-mail">e-mail</label>
-          <input type="email" placeholder="e-mail" id="e-mail" required {...register("email", { required: true })} />
-          {errors.email && <p role="alert">{errors.email.message}</p>}
+        {errors.username && <p className="alert" role="alert">{errors.username.message}</p>}
+        <div className="input-div">
+          <label htmlFor="e-mail" className="label">e-mail</label>
+          <input type="email" placeholder="e-mail" id="e-mail" {...register("email", { required: true })} className="input" />
         </div>
-        <div>
-          <label htmlFor="password">password</label>
-          <input type="password" placeholder="password" id="password" required {...register("password", { required: true })} />
-          {errors.password && <p role="alert">{errors.password.message}</p>}
+        {errors.email && <p className="alert" role="alert">{errors.email.message}</p>}
+        <div className="input-div">
+          <label htmlFor="password" className="label">password</label>
+          <input type="password" placeholder="password" id="password" {...register("password", { required: true })} className="input" />
         </div>
-        <div>
-          <label htmlFor="confirmPassword">confirm password</label>
+        {errors.password && <p className="alert" role="alert">{errors.password.message}</p>}
+        <div className="input-div">
+          <label htmlFor="confirmPassword" className="label">confirm password</label>
           <input
             type="password"
             placeholder="confirm password"
             id="confirmPassword"
-            required
             {...register("confirmPassword", { required: true })}
+            className="input"
           />
-          {errors.confirmPassword && (<p role="alert">{errors.confirmPassword.message}</p>)}
         </div>
-        <button type="submit">Signup</button>
+        {errors.confirmPassword && (<p className="alert" role="alert">{errors.confirmPassword.message}</p>)}
+        <button type="submit" className="submit-btn">Signup</button>
       </form>
-    </>
+    </div>
   )
 }
 export default SignUp;

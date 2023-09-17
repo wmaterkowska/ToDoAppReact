@@ -17,7 +17,7 @@ const ThemeSwitch: React.FC<{}> = () => {
   );
 
   useEffect(() => {
-    if (isDark) {
+    if (!isDark) {
       document.body.classList.add('dark');
     } else {
       document.body.classList.remove('dark');

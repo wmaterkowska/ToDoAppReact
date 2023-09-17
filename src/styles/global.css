@@ -4,12 +4,14 @@
   --primary-color: black;
   --secondary-color: rgb(65, 65, 65);
   --background-color: white;
+  --alert-color: red;
 }
 
 body.dark {
   --primary-color: white;
   --secondary-color: rgb(235, 233, 233);
   --background-color: rgb(17, 17, 17);
+  --alert-color: red;
 }
 
 * {
