@@ -1,7 +1,8 @@
 import TodoCard from "components/TodoCard/TodoCard";
 import { useEffect, useState } from "react";
-import { getAllTodos } from "services/todoService";
+import { addTodo, getAllTodos } from "services/todoService";
 import type { TodoFromBackend } from "data/TodoFromBackend";
+import type { AddTodo } from "data/AddTodo";
 import './TodoList.css'
 
 const TodosList: React.FC<{}> = () => {
@@ -13,14 +14,31 @@ const TodosList: React.FC<{}> = () => {
     todosPromise.then(res => setTodos(res));
   }
 
+
+  function handleAddBtnCLick(event: React.MouseEvent) {
+    const newTodo: AddTodo = { "content": " " }
+    addTodo(newTodo);
+    setTodos((old) => [...old, newTodo])
+  }
+
   useEffect(() => {
     getTodos();
   }, []);
 
   return (
-    <div className="todoList">
-      {todos.map((todo: TodoFromBackend) => <TodoCard todo={todo} key={todo.id} />)}
-    </div>
+    <>
+      <div className="todoList" id="todoList">
+        {todos.map((todo: TodoFromBackend) => <TodoCard todo={todo} key={todo.id} />)}
+      </div>
+      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" rel="stylesheet" />
+
+
+      <div className="footer-container">
+        <div className="btn-container">
+          <button className="addBtn" onClick={handleAddBtnCLick}><span className="material-symbols-outlined">add</span></button>
+        </div>
+      </div>
+    </>
   )
 }
 
