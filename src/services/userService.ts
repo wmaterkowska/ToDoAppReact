@@ -24,7 +24,7 @@ const login = (user: LoginUser) => {
     .then((res) => res.json())
     .then((response) => {
       const expires = new Date();
-      expires.setDate(expires.getDate() + 7);
+      expires.setDate(expires.getDate() + 17);
       document.cookie = `authCookie=${encodeURIComponent(JSON.stringify(response))}; expires=${expires.toUTCString()}`;
       return true;
     })

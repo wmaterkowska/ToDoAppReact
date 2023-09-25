@@ -16,9 +16,12 @@ const TodosList: React.FC<{}> = () => {
 
 
   function handleAddBtnCLick(event: React.MouseEvent) {
-    const newTodo: AddTodo = { "content": " " }
-    addTodo(newTodo);
+    const newTodo: TodoFromBackend = { content: " ", id: '-1', lastChange: (new Date()).toString(), done: false }
     setTodos((old) => [...old, newTodo])
+    // const newTodoFromBackend = addTodo(newTodo).then(res => {
+    //   console.log(res);
+    //   setTodos((old) => [...old, res])
+    // });
   }
 
   useEffect(() => {

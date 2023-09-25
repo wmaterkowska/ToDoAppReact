@@ -5,13 +5,19 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ hamburgerOpen }) => {
+
+  function handleLogOut() {
+    document.cookie = "authCookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    window.location.href = '/';
+  }
+
   return (
     <>
       <div className="menu-container">
         <p>account</p>
-        <div className="menu-item">logout</div>
+        <button className="menu-item" onClick={handleLogOut}>logout</button>
         <p>other</p>
-        <div className="menu-item">about</div>
+        <button className="menu-item">about</button>
       </div>
 
       <style>{`

@@ -1,4 +1,5 @@
 ---
+import ProtectedRoute from "components/ProtectedRoute";
 import Header from "../components/Header/Header";
 import TodosList from "../components/TodosList/TodosList";
 import "../styles/global.css";
@@ -12,7 +13,9 @@ import "../styles/global.css";
     <title>ToDoList</title>
   </head>
   <body>
-    <Header client:only />
-    <TodosList client:only />
+    <ProtectedRoute client:only>
+      <Header client:only />
+      <TodosList client:only />
+    </ProtectedRoute>
   </body>
 </html>
