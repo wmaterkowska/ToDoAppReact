@@ -23,9 +23,10 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
 
   function handleCheckboxChange(event: React.ChangeEvent<HTMLInputElement>) {
     event.stopPropagation();
-    const updatedTodo = { ...todo };
-    updatedTodo.done = event.target.checked;
-    setIsChecked(updatedTodo.done)
+    // const updatedTodo = { ...todo };
+    todo.done = event.target.checked;
+    setIsChecked(todo.done);
+    updateTodo(todo.id, todo);
   }
 
   function handleClickOnCard() {
