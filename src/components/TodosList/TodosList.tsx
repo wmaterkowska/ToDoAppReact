@@ -1,8 +1,7 @@
 import TodoCard from "components/TodoCard/TodoCard";
 import { useEffect, useState } from "react";
-import { addTodo, getAllTodos } from "services/todoService";
+import { getAllTodos } from "services/todoService";
 import type { TodoFromBackend } from "data/TodoFromBackend";
-import type { AddTodo } from "data/AddTodo";
 import './TodoList.css'
 
 const TodosList: React.FC<{}> = () => {
@@ -16,12 +15,8 @@ const TodosList: React.FC<{}> = () => {
 
 
   function handleAddBtnCLick(event: React.MouseEvent) {
-    const newTodo: TodoFromBackend = { content: " ", id: '-1', lastChange: (new Date()).toString(), done: false }
+    const newTodo: TodoFromBackend = { id: '-1', content: " ", lastChange: (new Date()).toString(), done: false }
     setTodos((old) => [...old, newTodo])
-    // const newTodoFromBackend = addTodo(newTodo).then(res => {
-    //   console.log(res);
-    //   setTodos((old) => [...old, res])
-    // });
   }
 
   useEffect(() => {

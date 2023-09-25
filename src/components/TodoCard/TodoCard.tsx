@@ -2,7 +2,9 @@ import "./TodoCard.css"
 import { useState } from "react";
 import dayjs from "dayjs";
 import relativeTime from 'dayjs/plugin/relativeTime';
+import { addTodo, updateTodo } from "services/todoService";
 import type { TodoFromBackend } from "data/TodoFromBackend";
+import type { AddTodo } from '../../data/AddTodo';
 
 
 dayjs.extend(relativeTime);
@@ -12,6 +14,7 @@ interface TodoCardProps {
 
 const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
 
+  console.log(todo);
 
   const [isChecked, setIsChecked] = useState(todo.done);
   const [toEdit, setToEdit] = useState(false);
@@ -29,9 +32,26 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
     setToEdit(true);
   }
 
+  function handleInputTitle(event: any) {
+    const text = event.target.textContent || '';
+    todo.title = text;
+  }
+
+  function handleInputContent(event: any) {
+    const text = event.target.textContent || '';
+    todo.content = text;
+  }
+
   function handleBackArrow(event: React.MouseEvent) {
     event.stopPropagation();
     setToEdit(false);
+
+    if (todo.id === '-1' && (todo.content !== '' || todo.title !== '')) {
+      let newTodo: AddTodo = { content: todo.content, title: todo.title };
+      addTodo(newTodo).then(res => todo = res);
+    } else if (todo.content !== '' || todo.title !== '') {
+      updateTodo(todo.id, todo).then(res => todo = res);
+    }
   }
 
   return (
@@ -50,8 +70,18 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
         </nav>
 
         <div className={`${isChecked ? "todo-done" : "todo"}`}>
-          <div contentEditable="true" suppressContentEditableWarning={true} className="todo-title">{todo.title}</div>
-          <div contentEditable="true" suppressContentEditableWarning={true} className="todo-content">{todo.content}</div>
+          <div
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+            className="todo-title"
+            onInput={handleInputTitle}
+          >{todo.title}</div>
+          <div
+            contentEditable="true"
+            suppressContentEditableWarning={true}
+            className="todo-content"
+            onInput={handleInputContent}
+          >{todo.content}</div>
           <div className="todo-date">{todoDate}</div>
         </div>
 
