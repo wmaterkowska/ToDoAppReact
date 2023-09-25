@@ -10,9 +10,10 @@ import type { AddTodo } from '../../data/AddTodo';
 dayjs.extend(relativeTime);
 interface TodoCardProps {
   todo: TodoFromBackend;
+  handleDelete: (id: string) => void;
 }
 
-const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
+const TodoCard: React.FC<TodoCardProps> = ({ todo, handleDelete }) => {
 
   console.log(todo);
 
@@ -55,6 +56,11 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
     }
   }
 
+  function handleDeleteOnClick(e: React.SyntheticEvent) {
+    e.stopPropagation();
+    handleDelete(todo.id);
+  }
+
   return (
     <>
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" rel="stylesheet" />
@@ -67,7 +73,7 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo }) => {
 
         <nav className="navigation">
           {toEdit && <button className="back" onClick={handleBackArrow}><span className="material-symbols-outlined">arrow_back_ios</span></button>}
-          {toEdit && <button className="delete"><span className="material-symbols-outlined">delete</span></button>}
+          {toEdit && <button className="delete" onClick={handleDeleteOnClick}><span className="material-symbols-outlined">delete</span></button>}
         </nav>
 
         <div className={`${isChecked ? "todo-done" : "todo"}`}>

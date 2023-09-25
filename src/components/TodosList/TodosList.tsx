@@ -1,6 +1,6 @@
 import TodoCard from "components/TodoCard/TodoCard";
 import { useEffect, useState } from "react";
-import { getAllTodos } from "services/todoService";
+import { deleteTodo, getAllTodos } from "services/todoService";
 import type { TodoFromBackend } from "data/TodoFromBackend";
 import './TodoList.css'
 
@@ -19,6 +19,11 @@ const TodosList: React.FC<{}> = () => {
     setTodos((old) => [...old, newTodo])
   }
 
+  function handleDelete(id: string) {
+    setTodos(todos => todos.filter(todo => todo.id !== id));
+    deleteTodo(id);
+  }
+
   useEffect(() => {
     getTodos();
   }, []);
@@ -26,10 +31,9 @@ const TodosList: React.FC<{}> = () => {
   return (
     <>
       <div className="todoList" id="todoList">
-        {todos.map((todo: TodoFromBackend) => <TodoCard todo={todo} key={todo.id} />)}
+        {todos.map((todo: TodoFromBackend) => <TodoCard todo={todo} handleDelete={handleDelete} key={todo.id} />)}
       </div>
       <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" rel="stylesheet" />
-
 
       <div className="footer-container">
         <div className="btn-container">
