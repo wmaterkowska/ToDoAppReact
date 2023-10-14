@@ -80,15 +80,18 @@ const TodoCard: React.FC<TodoCardProps> = ({ todo, handleDelete }) => {
           <div
             contentEditable="true"
             suppressContentEditableWarning={true}
-            className="todo-title"
+            className={`${!toEdit ? "todo-title" : "todo-title-edit"}`}
             onInput={handleInputTitle}
+            placeholder="Title"
           >{todo.title}</div>
           <div
             contentEditable="true"
             suppressContentEditableWarning={true}
-            className="todo-content"
+            className={`${!toEdit ? "todo-content" : "todo-content-edit"}`}
             onInput={handleInputContent}
+            placeholder="Text"
           >{todo.content}</div>
+
           <div className="todo-date">{todoDate}</div>
         </div>
 
